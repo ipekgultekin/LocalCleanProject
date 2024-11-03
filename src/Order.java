@@ -79,4 +79,13 @@ public class Order {
         this.paidStatus = paidStatus;
     }
 
+    @Override
+    public String toString() {
+        return "Order{" +
+                "itemList=" + itemList +
+                ", Order Date=" + orderDate +
+                ", Paid Status=" + paidStatus +
+                ", Total order cost=" + totalOrderCost() + " $ "+
+                '}';
+    }
 }

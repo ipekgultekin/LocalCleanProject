@@ -89,4 +89,15 @@ public class Customer {
     public void setRegistrationDate(Date registrationDate) {
         this.registrationDate = registrationDate;
     }
+
+    @Override
+    public String toString() {
+        return "Customer{" +
+                "Customer ID=" + customerID +
+                ", Customer Name='" + customerName + '\'' +
+                ", Customer Surname='" + customerSurname + '\'' +
+                ", Registration Date=" + registrationDate +
+                ", Orders=" + orders +
+                '}';
+    }
 }

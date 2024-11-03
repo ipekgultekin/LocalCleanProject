@@ -70,4 +70,15 @@ public class LaundryItem {
     public void setType(String type) {
         this.type = type;
     }
+
+    @Override
+    public String toString() {
+        return "LaundryItem{" +
+                "assigned=" + assigned.getName() +
+                ", type='" + type + '\'' +
+                ", quantity=" + quantity +
+                ", price=" + price +
+                ", notes='" + notes + '\'' +
+                '}';
+    }
 }

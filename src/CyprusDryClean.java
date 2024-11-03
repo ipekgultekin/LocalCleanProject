@@ -1,9 +1,6 @@
-import java.util.Date;
+import java.util.*;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Random;
-import java.util.Scanner;
 
 public class CyprusDryClean {
     public static ArrayList<Employee> empList = new ArrayList<Employee>();
@@ -35,7 +32,7 @@ public class CyprusDryClean {
                     + "12. Exit\n"
             );
 
-            System.out.println("Enter a choice: ");
+            System.out.print("Enter a choice: ");
             choice = input.nextInt();
 
             switch(choice) {
@@ -43,12 +40,12 @@ public class CyprusDryClean {
                     addEmployee();
                     break;
                 case 2:
-                    System.out.println("Please enter employee ID to delete: ");
+                    System.out.print("Please enter employee ID to delete: ");
                     int employeeID = input.nextInt();
                     deleteEmployee(employeeID);
                     break;
                 case 3:
-                    System.out.println("Please enter employee ID to list of details: ");
+                    System.out.print("Please enter employee ID to list of details: ");
                     employeeID = input.nextInt();
                     listEmployeeDetails(employeeID);
                     break;
@@ -56,35 +53,35 @@ public class CyprusDryClean {
                     addCustomer();
                     break;
                 case 5:
-                    System.out.println("Please enter customer ID to delete: ");
+                    System.out.print("Please enter customer ID to delete: ");
                     int customerID = input.nextInt();
                     deleteCustomer(customerID);
                     break;
                 case 6:
-                    System.out.println("Please enter customer ID to list of details: ");
+                    System.out.print("Please enter customer ID to list of details: ");
                     customerID = input.nextInt();
                     getCustomerDetails(customerID);
                     break;
                 case 7:
-                    System.out.println("Please enter customer ID: ");
+                    System.out.print("Please enter customer ID: ");
                     customerID = input.nextInt();
                     putOrder(customerID);
                     break;
                 case 8:
-                    System.out.println("Please enter customer ID: ");
+                    System.out.print("Please enter customer ID: ");
                     customerID = input.nextInt();
                     input.nextLine();
-                    System.out.println("Please enter the order date to check (dd-MM-yyyy): ");
+                    System.out.print("Please enter the order date to check (dd-MM-yyyy): ");
                     String dateOrder = input.nextLine();
                     Date orderDate = dateConversion(dateOrder);
 
                     getCustomerOrderDetails(customerID,orderDate);
                     break;
                 case 9:
-                    System.out.println("Please enter customer ID: ");
+                    System.out.print("Please enter customer ID: ");
                     customerID = input.nextInt();
                     input.nextLine();
-                    System.out.println("Please enter the order date to check (dd-MM-yyyy): ");
+                    System.out.print("Please enter the order date to check (dd-MM-yyyy): ");
                     String costDate = input.nextLine();
                     Date orderCostDate = dateConversion(costDate);
 
@@ -99,8 +96,8 @@ public class CyprusDryClean {
                     exit();
                     break;
                 default:
-                    System.out.println("Invalid choice!! ");
-                    System.out.println("Sorry!");
+                    System.out.print("Invalid choice!! ");
+                    System.out.print("Sorry!");
                     break;
             }
         }while(choice !=12);
@@ -132,21 +129,28 @@ public class CyprusDryClean {
     public static void addEmployee() {
         Scanner input = new Scanner(System.in);
 
-        System.out.println("Enter new employee id: ");
+        System.out.print("Enter new employee id: ");
         int id = input.nextInt();
         input.nextLine();
+        for (Employee employee : empList) {
+                if (id == employee.getId())
+            {
+                System.out.println("Invalid ID! This ID has already taken!");
+                return;
+            }
+        }
 
-        System.out.println("Enter new employee name: ");
+        System.out.print("Enter new employee name: ");
         String name = input.nextLine();
 
-        System.out.println("Enter new employee surname: ");
+        System.out.print("Enter new employee surname: ");
         String surname = input.nextLine();
 
-        System.out.println("Enter new employee's date of birth (dd-MM-yyyy): ");
+        System.out.print("Enter new employee's date of birth (dd-MM-yyyy): ");
         String dateBirth = input.nextLine();
         Date dateOfBirth = dateConversion(dateBirth);
 
-        System.out.println("Enter new employee's start date (dd-MM-yyyy): ");
+        System.out.print("Enter new employee's start date (dd-MM-yyyy): ");
         String dateStart = input.nextLine();
         Date startDate = dateConversion(dateStart);
 
@@ -225,16 +229,24 @@ public class CyprusDryClean {
     public static void addCustomer() {
         Scanner input = new Scanner(System.in);
 
-        System.out.println("Enter new customer id: ");
+        System.out.print("Enter new customer id: ");
         int customerId = input.nextInt();
+        input.nextLine();
+        for (Customer customer : customerList) {
+            if (customerId == customer.getCustomerID())
+            {
+                System.out.println("Invalid ID! This ID has already taken!");
+                return;
+            }
+        }
 
-        System.out.println("Enter new customer name: ");
+        System.out.print("Enter new customer name: ");
         String customerName = input.nextLine();
 
-        System.out.println("Enter new customer surname: ");
+        System.out.print("Enter new customer surname: ");
         String customerSurname = input.nextLine();
 
-        System.out.println("Enter the registration date (yyyy-MM-dd): ");
+        System.out.print("Enter the registration date (dd-MM-yyyy): ");
         String registrationDate = input.nextLine();
         Date date = dateConversion(registrationDate);
 
@@ -272,7 +284,7 @@ public class CyprusDryClean {
             System.out.println("Customer Name: " + customer.getCustomerName());
             System.out.println("Customer Surname: " + customer.getCustomerSurname());
             System.out.println("Registration Date: " + customer.getRegistrationDate());
-            System.out.println("Total Orders: " + customer.getOrders());
+            System.out.println("Total Orders: " +  customer.toString());
         }
         else{
             System.out.println("Customer not found! Please enter a valid ID.");
@@ -300,16 +312,17 @@ public class CyprusDryClean {
         }
 
         Scanner input = new Scanner(System.in);
-        System.out.println("Paid status -> (yes/no)");
+        System.out.print("Paid status -> (yes/no)");
         boolean isPaid = input.nextLine().equalsIgnoreCase("yes");
 
         Order order = new Order(new java.util.Date(),isPaid);
 
-        System.out.println("Enter the number of laundry items: ");
+        System.out.print("Enter the number of laundry items: ");
         int numberOfItems = input.nextInt();
         input.nextLine();
 
         //This is an assumption. I decided to do like this.
+        // Price list display for the user
         System.out.println("Price List:\n"+
                 "Shirt: 8$\n" +
                 "Jean: 10$\n" +
@@ -336,7 +349,7 @@ public class CyprusDryClean {
                     break;
                 default:
                     System.out.println("Invalid type. Please choose correct type.");
-                    break;
+                    continue;
             }
 
             System.out.println("Enter quantity of " + itemType + ": ");
@@ -350,7 +363,7 @@ public class CyprusDryClean {
             LaundryItem laundryItem = new LaundryItem(employeeAssigned,notes,priceItem,quantity,itemType);
 
             order.addLaundryItem(laundryItem);
-            System.out.println("Thank you for choosing us!\n" +
+            System.out.println("\nThank you for choosing us!\n" +
                     "Your order added successfully!\n" +
                     quantity + " " +itemType + " assigned to " + employeeAssigned.getName()
                     + " and its cost is " + laundryItem.totalCost() + " $.");
@@ -362,6 +375,24 @@ public class CyprusDryClean {
         customer.addOrder(order);
         System.out.println("Putting order successfully!");
 
+    }
+
+    /**
+     * Compares two Date objects and checks if they represent the same calendar day
+     * by comparing only the year, month, and day components, ignoring the time.
+     * @param date1 first date
+     * @param date2 second date
+     * @return true if both dates are equal
+     */
+    public static boolean isSameDay(Date date1, Date date2) {
+        Calendar cal1 = Calendar.getInstance();
+        Calendar cal2 = Calendar.getInstance();
+        cal1.setTime(date1);
+        cal2.setTime(date2);
+
+        return cal1.get(Calendar.YEAR) == cal2.get(Calendar.YEAR) &&
+                cal1.get(Calendar.MONTH) == cal2.get(Calendar.MONTH) &&
+                cal1.get(Calendar.DAY_OF_MONTH) == cal2.get(Calendar.DAY_OF_MONTH);
     }
 
 
@@ -385,17 +416,17 @@ public class CyprusDryClean {
         boolean orderFound = false;
 
         ArrayList<Order> orders = customer.getOrders();
-        System.out.println("Orders for customer " + customerID + "on " + orderDate );
+        System.out.println("Orders for customer " + customerID + " on " + orderDate );
 
         for (Order order: orders){
-            if(orderDate.equals(order.getOrderDate())){
+            if(isSameDay(orderDate,order.getOrderDate())){
                 orderFound = true;
-                System.out.println("Order date: " + order.getOrderDate());
+                System.out.println("\nOrder date: " + order.getOrderDate());
                 System.out.println("Paid status: " + ((order.isPaidStatus()) ? "Yes" : "No"));
-                System.out.println("Laundry items: \n");
+                System.out.println("Laundry items: ");
 
                 for(LaundryItem laundryItem : order.getItemList()){
-                    System.out.println("Item type: " + laundryItem.getType()+ "Quantity: " + laundryItem.getQuantity());
+                    System.out.println("  Item type: " + laundryItem.getType()+ ",  Quantity: " + laundryItem.getQuantity());
                 }
             }
             if(!orderFound){
@@ -427,7 +458,7 @@ public class CyprusDryClean {
 
         System.out.println("Order total cost of customer " + customerID + " on " + orderDate);
         for(Order order: orders){
-            if(orderDate.equals(order.getOrderDate())){
+            if(isSameDay(orderDate,order.getOrderDate())){
                 orderFound = true;
                 double totalCost = order.totalOrderCost(); //call
                 System.out.println("Order date: " + order.getOrderDate() + " and total cost: " + totalCost + "$.");
@@ -460,7 +491,7 @@ public class CyprusDryClean {
                     " Name: " + customer.getCustomerName() +
                     " Surname: " + customer.getCustomerSurname() +
                     " Registration Date: " + customer.getRegistrationDate() +
-                    " Total Orders: " + customer.getOrders());
+                    " Total Orders: " + customer.toString());
         }
     }
 
