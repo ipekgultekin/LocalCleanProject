@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="Assignment1IpekGultekin:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/Assignment1IpekGultekin_jar</output-path>
+    <root id="archive" name="Assignment1IpekGultekin.jar">
+      <element id="module-output" name="Assignment1IpekGultekin" />
+    </root>
+  </artifact>
+</component>

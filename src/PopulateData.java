@@ -8,7 +8,7 @@ import java.util.Date;
 
 /**
  * This PopulateData class is used to add sample data into the CyprusDryClean system.
- * It initializes 3 Package1.Employee and 3 Customer objects along with their associated orders and laundry items.
+ * It initializes 3 Employee and 3 Customer objects along with their associated orders and laundry items.
  * @author İpek Gültekin
  */
 public class PopulateData {

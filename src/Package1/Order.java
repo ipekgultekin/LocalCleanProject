@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Date;
 
 /**
- * This class contains Package1.Order details such as order date, list of items associated with the laundry items, and paid status,
+ * This class contains Order details such as order date, list of items associated with the laundry items, and paid status,
  * getter and setter methods, constructors, and extra methods.
  * @author İpek Gültekin
  */

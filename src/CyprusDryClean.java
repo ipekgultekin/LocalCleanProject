@@ -205,7 +205,7 @@ public class CyprusDryClean {
 
 
     /**
-     * This method deletes an Package1.Employee from the employeeList based on the ID.
+     * This method deletes an Employee from the employeeList based on the ID.
      * @param empID the ID of the employee
      */
     public static void deleteEmployee(int empID) {
@@ -222,7 +222,7 @@ public class CyprusDryClean {
 
 
     /**
-     * This method displays all Package1.Employee details based on the specific ID.
+     * This method displays all Employee details based on the specific ID.
      * @param empId the ID of the employee
      */
     public static void listEmployeeDetails(int empId){
@@ -498,10 +498,10 @@ public class CyprusDryClean {
      * This method lists of all employees with their all details
      */
     public void listEmployees() {
+        System.out.println("List of Employees");
         for (Employee employee : empList) {
             System.out.println("Employee ID:" + employee.getId() +
-                    " Name: " + employee.getName() +
-                    " Surname: " + employee.getSurname()+
+                    " Name/Surname: " + employee.getName() + " " + employee.getSurname() +
                     " Date of Birth: " + employee.getDateOfBirth()+
                     " Start Date: " + employee.getStartDate());
         }
@@ -512,11 +512,12 @@ public class CyprusDryClean {
      * This method lists of all customers with their all details
      */
     public void listCustomers() {
+        System.out.println("List of Employees");
         for (Customer customer : customerList) {
             System.out.println("Customer ID:" + customer.getCustomerID() +
-                    " Name: " + customer.getCustomerName() +
-                    " Surname: " + customer.getCustomerSurname() +
+                    " Name/Surname: " + customer.getCustomerName() + " " + customer.getCustomerSurname() +
                     " Registration Date: " + customer.getRegistrationDate() +
+                    " Number of Orders: " + customer.getOrders().size() +
                     " Total Orders: " + customer.toString());
         }
     }

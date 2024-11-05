@@ -3,7 +3,7 @@ package Package1;
 import java.util.Date;
 
 /**
- * This class contains Package1.Employee details such as id, name, surname, dateOfBirth, startDate,
+ * This class contains Employee details such as id, name, surname, dateOfBirth, startDate,
  * getter and setter methods, and constructors.
  * @author İpek Gültekin
  */
