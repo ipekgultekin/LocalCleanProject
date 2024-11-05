@@ -2,6 +2,10 @@ import java.util.*;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 
+/**
+ * This class manages the basic functionality of the CyprusDryClean application.
+ * @author İpek Gültekin
+ */
 public class CyprusDryClean {
     public static ArrayList<Employee> empList = new ArrayList<Employee>();
     public static ArrayList<Customer> customerList = new ArrayList<Customer>();
@@ -13,6 +17,9 @@ public class CyprusDryClean {
         obj.menu();
     }
 
+    /**
+     * This method displays a menu for user.
+     */
     public void menu() {
         Scanner input = new Scanner(System.in);
         System.out.println("Welcome to CyprusDry Clean!!");
@@ -102,6 +109,8 @@ public class CyprusDryClean {
             }
         }while(choice !=12);
     }
+
+
     /**
      * This helper method converts a date from String format to Date format.
      * @param string date in String format
@@ -124,7 +133,8 @@ public class CyprusDryClean {
 
 
     /**
-     * Adds a new Employee to the employeeList
+     * This method adds a new Employee to the employeeList
+     * also it controls the ID to be unique.
      */
     public static void addEmployee() {
         Scanner input = new Scanner(System.in);
@@ -159,10 +169,11 @@ public class CyprusDryClean {
         System.out.println("New employee added successfully!");
     }
 
+
     /**
-     * I added a helper method to check that the employee ID entered by the user and the IDs in the system match.
+     * This helper method check that the employee ID entered by the user and the IDs in the system match.
      * @param empID the ID of the employee to finding
-     * @return
+     * @return null if they are not match
      */
     public static Employee findEmployeeID(int empID){
         for(Employee employee: empList){
@@ -173,10 +184,11 @@ public class CyprusDryClean {
         return null;
     }
 
+
     /**
-     * Again, I added a helper method to check that the customer ID entered by the user and the IDs in the system match.
+     * This helper method check that the customer ID entered by the user and the IDs in the system match.
      * @param customerID the ID of the customer to finding
-     * @return
+     * @return null if they are not match
      */
     public static Customer findCustomerID(int customerID){
         for(Customer customer: customerList){
@@ -187,8 +199,9 @@ public class CyprusDryClean {
         return null;
     }
 
+
     /**
-     * Deletes an Employee from the employeeList based on the ID.
+     * This method deletes an Employee from the employeeList based on the ID.
      * @param empID the ID of the employee
      */
     public static void deleteEmployee(int empID) {
@@ -203,8 +216,9 @@ public class CyprusDryClean {
 
     }
 
+
     /**
-     * Display Employee details based on the specific ID.
+     * This method displays all Employee details based on the specific ID.
      * @param empId the ID of the employee
      */
     public static void listEmployeeDetails(int empId){
@@ -224,7 +238,8 @@ public class CyprusDryClean {
 
 
     /**
-     * Adds a new Customer to the customerList
+     * This method adds a new Customer to the customerList
+     * also it controls the ID to be unique.
      */
     public static void addCustomer() {
         Scanner input = new Scanner(System.in);
@@ -258,7 +273,7 @@ public class CyprusDryClean {
 
 
     /**
-     * Deletes a Customer from the employeeList based on the ID.
+     * This method deletes a Customer from the employeeList based on the ID.
      * @param customerID the ID of the customer
      */
     public static void deleteCustomer(int customerID) {
@@ -272,8 +287,9 @@ public class CyprusDryClean {
         }
     }
 
+
     /**
-     * Display Customer details based on the specific ID.
+     * This method displays all Customer details based on the specific ID.
      * @param customerID the ID of the customer
      */
     public void getCustomerDetails(int customerID){
@@ -291,14 +307,16 @@ public class CyprusDryClean {
         }
     }
 
+
     /**
-     * I added this "getRandomEmployee" method because I want each LaundryItem to be shared randomly to the employees.
+     * This helper method allows laundry items to be given to employees randomly.
      * @return a randomly selected Employee object
      */
     public Employee getRandomEmployee(){
         Random random = new Random();
         return empList.get(random.nextInt(empList.size()));
     }
+
 
     /**
      * This method places an order for a customer, and assigns to each employee to each item, and adds the items their order.
@@ -377,6 +395,7 @@ public class CyprusDryClean {
 
     }
 
+
     /**
      * Compares two Date objects and checks if they represent the same calendar day
      * by comparing only the year, month, and day components, ignoring the time.
@@ -435,6 +454,7 @@ public class CyprusDryClean {
         }
     }
 
+
     /**
      * This method calculate and display the total cost of all orders made by a specific customer on a given date.
      * @param customerID the ID of the customer whose order costs are being calculated
@@ -469,8 +489,9 @@ public class CyprusDryClean {
         }
     }
 
+
     /**
-     * List of all employees with their details
+     * This method lists of all employees with their all details
      */
     public void listEmployees() {
         for (Employee employee : empList) {
@@ -482,8 +503,9 @@ public class CyprusDryClean {
         }
     }
 
+
     /**
-     * List of all customers with their details
+     * This method lists of all customers with their all details
      */
     public void listCustomers() {
         for (Customer customer : customerList) {
@@ -495,6 +517,10 @@ public class CyprusDryClean {
         }
     }
 
+
+    /**
+     * This method contains a  message to end the program.
+     */
     public void exit(){
         System.out.println("Have a nice day!");
     }
