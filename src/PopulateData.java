@@ -1,10 +1,14 @@
+import Package1.Employee;
+import Package1.LaundryItem;
+import Package1.Order;
+
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
  * This PopulateData class is used to add sample data into the CyprusDryClean system.
- * It initializes 3 Employee and 3 Customer objects along with their associated orders and laundry items.
+ * It initializes 3 Package1.Employee and 3 Customer objects along with their associated orders and laundry items.
  * @author İpek Gültekin
  */
 public class PopulateData {
@@ -13,7 +17,7 @@ public class PopulateData {
         SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
 
         try {
-            // Creating Employee objects with their id, name, surname, date of birth and start date.
+            // Creating Package1.Employee objects with their id, name, surname, date of birth and start date.
             Employee emp1 = new Employee(1, "Demi", "Lovato", dateFormat.parse("20-08-1992"), dateFormat.parse("10-01-2010"));
             Employee emp2 = new Employee(2, "Justin", "Bieber", dateFormat.parse("01-03-1994"), dateFormat.parse("12-03-2013"));
             Employee emp3 = new Employee(3, "Selena", "Gomez", dateFormat.parse("22-07-1992"), dateFormat.parse("18-07-2021"));

@@ -1,3 +1,5 @@
+import Package1.Order;
+
 import java.util.Date;
 import java.util.ArrayList;
 
@@ -43,7 +45,7 @@ public class Customer {
     }
 
     /**
-     * This helper method to add a new Order to the customerList.
+     * This helper method to add a new Package1.Order to the customerList.
      * @param order
      */
     public void addOrder(Order order){

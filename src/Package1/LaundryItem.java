@@ -1,3 +1,5 @@
+package Package1;
+
 /**
  * This class contains Laundry item details such as type, quantity, price, notes, assigned employee,
  * getter and setter methods, constructors, and extra methods.
@@ -12,7 +14,7 @@ public class LaundryItem {
     private Employee assigned;
 
     /**
-     * Default Constructor a LaundryItem
+     * Default Constructor a Package1.LaundryItem
      */
     public LaundryItem(){
         this.assigned = assigned;
@@ -22,7 +24,7 @@ public class LaundryItem {
     }
 
     /**
-     * Construct a LaundryItem with assigned Employee, notes, price, quantity and type
+     * Construct a Package1.LaundryItem with assigned Package1.Employee, notes, price, quantity and type
      * @param assigned assigned employee
      * @param notes notes for item
      * @param price price for item
@@ -38,7 +40,7 @@ public class LaundryItem {
     }
 
     /**
-     * Construct a LaundryItem with assigned Employee, price and quantity
+     * Construct a Package1.LaundryItem with assigned Package1.Employee, price and quantity
      * @param assigned assigned employee
      * @param price price for item
      * @param quantity quantity for item
@@ -122,7 +124,7 @@ public class LaundryItem {
     }
 
     /**
-     * Returns a string representation of the LaundryItem object.
+     * Returns a string representation of the Package1.LaundryItem object.
      * @return A string representing the assigned employee, item type, quantity, price,
      * and notes.
      */

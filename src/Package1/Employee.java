@@ -1,7 +1,9 @@
+package Package1;
+
 import java.util.Date;
 
 /**
- * This class contains Employee details such as id, name, surname, dateOfBirth, startDate,
+ * This class contains Package1.Employee details such as id, name, surname, dateOfBirth, startDate,
  * getter and setter methods, and constructors.
  * @author İpek Gültekin
  */
@@ -25,7 +27,7 @@ public class Employee {
     }
 
     /**
-     * Constructor an Employee with id, name, surname, date of birth and start date
+     * Constructor an Package1.Employee with id, name, surname, date of birth and start date
      * @param id employee id
      * @param name employee name
      * @param surname employee surname
@@ -41,7 +43,7 @@ public class Employee {
     }
 
     /**
-     * Constructor an Employee with id, name and surname
+     * Constructor an Package1.Employee with id, name and surname
      * @param id employee id
      * @param name employee name
      * @param surname employee surname

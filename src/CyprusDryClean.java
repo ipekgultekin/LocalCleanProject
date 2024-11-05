@@ -1,3 +1,7 @@
+import Package1.Employee;
+import Package1.LaundryItem;
+import Package1.Order;
+
 import java.util.*;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -31,7 +35,7 @@ public class CyprusDryClean {
                     + "4. Add Customer\n"
                     + "5. Delete Customer\n"
                     + "6. List Customer Details\n"
-                    + "7. Put Order\n"
+                    + "7. Put Package1.Order\n"
                     + "8. Customer Order Details\n"
                     + "9. Customer Order Total Cost\n"
                     + "10. List Employees\n"
@@ -133,7 +137,7 @@ public class CyprusDryClean {
 
 
     /**
-     * This method adds a new Employee to the employeeList
+     * This method adds a new Package1.Employee to the employeeList
      * also it controls the ID to be unique.
      */
     public static void addEmployee() {
@@ -201,7 +205,7 @@ public class CyprusDryClean {
 
 
     /**
-     * This method deletes an Employee from the employeeList based on the ID.
+     * This method deletes an Package1.Employee from the employeeList based on the ID.
      * @param empID the ID of the employee
      */
     public static void deleteEmployee(int empID) {
@@ -218,7 +222,7 @@ public class CyprusDryClean {
 
 
     /**
-     * This method displays all Employee details based on the specific ID.
+     * This method displays all Package1.Employee details based on the specific ID.
      * @param empId the ID of the employee
      */
     public static void listEmployeeDetails(int empId){
@@ -232,7 +236,7 @@ public class CyprusDryClean {
             System.out.println("Employee Start Date: " + empList.get(empId).getStartDate());
         }
         else{
-            System.out.println("Employee not found! Please enter a valid ID.");
+            System.out.println("Package1.Employee not found! Please enter a valid ID.");
         }
     }
 
@@ -310,7 +314,7 @@ public class CyprusDryClean {
 
     /**
      * This helper method allows laundry items to be given to employees randomly.
-     * @return a randomly selected Employee object
+     * @return a randomly selected Package1.Employee object
      */
     public Employee getRandomEmployee(){
         Random random = new Random();
@@ -440,7 +444,7 @@ public class CyprusDryClean {
         for (Order order: orders){
             if(isSameDay(orderDate,order.getOrderDate())){
                 orderFound = true;
-                System.out.println("\nOrder date: " + order.getOrderDate());
+                System.out.println("\nPackage1.Order date: " + order.getOrderDate());
                 System.out.println("Paid status: " + ((order.isPaidStatus()) ? "Yes" : "No"));
                 System.out.println("Laundry items: ");
 
@@ -476,12 +480,12 @@ public class CyprusDryClean {
         ArrayList<Order> orders = customer.getOrders();
         boolean orderFound = false;
 
-        System.out.println("Order total cost of customer " + customerID + " on " + orderDate);
+        System.out.println("Package1.Order total cost of customer " + customerID + " on " + orderDate);
         for(Order order: orders){
             if(isSameDay(orderDate,order.getOrderDate())){
                 orderFound = true;
                 double totalCost = order.totalOrderCost(); //call
-                System.out.println("Order date: " + order.getOrderDate() + " and total cost: " + totalCost + "$.");
+                System.out.println("Package1.Order date: " + order.getOrderDate() + " and total cost: " + totalCost + "$.");
             }
         }
         if(!orderFound){

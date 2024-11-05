@@ -1,8 +1,10 @@
+package Package1;
+
 import java.util.ArrayList;
 import java.util.Date;
 
 /**
- * This class contains Order details such as order date, list of items associated with the laundry items, and paid status,
+ * This class contains Package1.Order details such as order date, list of items associated with the laundry items, and paid status,
  * getter and setter methods, constructors, and extra methods.
  * @author İpek Gültekin
  */
@@ -13,7 +15,7 @@ public class Order {
     private boolean paidStatus;
 
     /**
-     * Default Constructor an Order
+     * Default Constructor an Package1.Order
      */
     public Order() {
         this.orderDate = new Date();
@@ -22,7 +24,7 @@ public class Order {
     }
 
     /**
-     * Construct an Order with itemList, orderDate and paidStatus
+     * Construct an Package1.Order with itemList, orderDate and paidStatus
      * @param itemList list of laundry items
      * @param orderDate order date
      * @param paidStatus paid status
@@ -34,7 +36,7 @@ public class Order {
     }
 
     /**
-     * Construct an Order with orderDate and paidStatus
+     * Construct a Package1.Order with orderDate and paidStatus
      * @param orderDate order date
      * @param paidStatus paid status
      */
@@ -58,7 +60,7 @@ public class Order {
     }
 
     /**
-     * This helper method adds a LaundryItem to the Order's itemList.
+     * This helper method adds a Package1.LaundryItem to the Package1.Order's itemList.
      * This method allows laundry items to be dynamically added to an order without rebuilding the list each time.
      * @param laundryItem laundryItem
      */
@@ -115,7 +117,7 @@ public class Order {
     }
 
     /**
-     * Returns a string representation of the Order object.
+     * Returns a string representation of the Package1.Order object.
      * @return A string representing the item list, order date, paid stats,
      * and total order cost.
      */
